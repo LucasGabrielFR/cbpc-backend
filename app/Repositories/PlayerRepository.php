@@ -15,6 +15,11 @@ class PlayerRepository
 
     public function getAllPlayers()
     {
-        return $this->entity->get();
+        return $this->entity->all()->load('positions');
+    }
+
+    public function getPlayer(string $id)
+    {
+        return $this->entity->findOrFail($id)->load('positions');
     }
 }

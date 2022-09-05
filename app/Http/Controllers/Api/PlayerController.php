@@ -20,4 +20,9 @@ class PlayerController extends Controller
     {
         return PlayerResource::collection($this->repository->getAllPlayers());
     }
+
+    public function show($id)
+    {
+        return new PlayerResource($this->repository->getPlayer($id));
+    }
 }

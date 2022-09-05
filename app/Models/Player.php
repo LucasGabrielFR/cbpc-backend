@@ -30,4 +30,9 @@ class Player extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function positions()
+    {
+        return $this->belongsToMany(Position::class,"player_positions","player_id","position_id");
+    }
 }
