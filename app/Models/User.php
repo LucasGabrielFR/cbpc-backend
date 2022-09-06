@@ -51,4 +51,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Player::class);
     }
+
+    public function team()
+    {
+        return $this->hasOne(Team::class);
+    }
 }
