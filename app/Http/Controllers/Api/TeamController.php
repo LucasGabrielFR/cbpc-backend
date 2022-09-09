@@ -23,6 +23,6 @@ class TeamController extends Controller
 
     public function show($id)
     {
-        return new TeamResource($this->repository->getTeam($id));
+        return new TeamResource($this->repository->getTeamPlayers($id));
     }
 }

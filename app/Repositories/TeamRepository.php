@@ -22,4 +22,9 @@ class TeamRepository
     {
         return $this->entity->findOrFail($id);
     }
+
+    public function getTeamPlayers(string $id)
+    {
+        return $this->entity->findOrFail($id)->load('contracts');
+    }
 }

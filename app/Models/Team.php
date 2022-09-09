@@ -32,4 +32,9 @@ class Team extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function contracts()
+    {
+        return $this->belongsToMany(Player::class,"player_contracts","team_id","player_id");
+    }
+
 }
